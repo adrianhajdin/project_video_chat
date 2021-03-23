@@ -3,6 +3,13 @@ const http = require("http")
 const app = express()
 const server = http.createServer(app)
 const io = require("socket.io")(server, {
+
+		cors: {
+		  origin: "https://hungry-euler-bf091b.netlify.app/",
+		  methods: ["GET", "POST"],
+		  credentials: true
+		}
+	  ,
 	handlePreflightRequest: (req, res) => {
 		const headers = {
 			"Access-Control-Allow-Headers": "Content-Type, Authorization",

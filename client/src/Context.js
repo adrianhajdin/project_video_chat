@@ -3,9 +3,9 @@ import io from 'socket.io-client';
 import Peer from 'simple-peer';
 
 const UserContext = createContext();
-
 // const socket = io.connect('http://localhost:5000');
-const socket = io.connect('https://warm-wildwood-81069.herokuapp.com');
+const socket = io.connect('https://warm-wildwood-81069.herokuapp.com', { transports: ['websocket'] }); // your local server
+// const socket = io.connect('https://warm-wildwood-81069.herokuapp.com');
 
 const ContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);

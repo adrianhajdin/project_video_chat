@@ -9,7 +9,7 @@ const Sidebar = () => {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(UserContext);
   const [idToCall, setIdToCall] = useState('');
 
-  console.log(me);
+  console.log('test', me);
 
   return (
     <Paper style={{ flexDirection: 'column' }}>

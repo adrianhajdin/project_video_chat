@@ -24,4 +24,4 @@ io.on("connection", (socket) => {
 	})
 })
 
-server.listen("https://priceless-swirles-68e598.netlify.app", () => console.log("server is running on port 5000"))
+server.listen("https://warm-wildwood-81069.herokuapp.com", () => console.log("server is running on port 5000"))

@@ -7,6 +7,8 @@ const io = require("socket.io")(server, {
 	  origin: '*',
 	}
 })
+const cors = require('cors');
+app.use(cors());
 
 io.on("connection", (socket) => {
 	socket.emit("me", socket.id)

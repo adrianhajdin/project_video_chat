@@ -2,7 +2,11 @@ const express = require("express")
 const http = require("http")
 const app = express()
 const server = http.createServer(app)
-const io = require("socket.io")(server)
+const io = require("socket.io")(server, {
+	cors: {
+	  origin: '*',
+	}
+})
 
 io.on("connection", (socket) => {
 	socket.emit("me", socket.id)

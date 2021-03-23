@@ -9,6 +9,8 @@ const Sidebar = () => {
   const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(UserContext);
   const [idToCall, setIdToCall] = useState('');
 
+  console.log(me);
+
   return (
     <Paper style={{ flexDirection: 'column' }}>
       <TextField label="Name" variant="filled" value={name} onChange={(e) => setName(e.target.value)} />

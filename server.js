@@ -1,18 +1,12 @@
-const express = require("express")
-const http = require("http")
-const app = express()
-const server = http.createServer(app)
-const cors = require("cors")
+const app = require("express")();
+const server = require("http").createServer(app);
+
 const io = require("socket.io")(server, {
 	cors: {
-		origin: "https://hungry-euler-bf091b.netlify.app",
-		methods: ["GET", "POST"],
-		allowedHeaders: ["my-custom-header"],
-		credentials: true
-	  }
+		origin: "http://localhost:3000",
+		methods: [ "GET", "POST" ]
+	}
 });
-
-app.use(cors());
 
 io.on("connection", (socket) => {
 	socket.emit("me", socket.id)

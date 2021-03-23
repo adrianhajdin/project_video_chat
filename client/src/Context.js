@@ -1,12 +1,10 @@
 import React, { createContext, useState, useRef, useEffect } from 'react';
-import io from 'socket.io-client';
+import { io } from 'socket.io-client';
 import Peer from 'simple-peer';
 
-const UserContext = createContext();
+const SocketContext = createContext();
 
-const socket = io.connect('https://warm-wildwood-81069.herokuapp.com', {
-  withCredentials: true,
-});
+const socket = io('http://localhost:5000');
 
 const ContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);
@@ -80,7 +78,7 @@ const ContextProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{
+    <SocketContext.Provider value={{
       call,
       callAccepted,
       myVideo,
@@ -96,8 +94,8 @@ const ContextProvider = ({ children }) => {
     }}
     >
       {children}
-    </UserContext.Provider>
+    </SocketContext.Provider>
   );
 };
 
-export { ContextProvider, UserContext };
+export { ContextProvider, SocketContext };

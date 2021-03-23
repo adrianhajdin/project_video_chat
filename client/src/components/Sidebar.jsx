@@ -3,10 +3,10 @@ import { Button, IconButton, TextField, Paper } from '@material-ui/core';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Assignment, Phone, PhoneDisabled } from '@material-ui/icons';
 
-import { UserContext } from '../Context';
+import { SocketContext } from '../Context';
 
 const Sidebar = () => {
-  const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(UserContext);
+  const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
   const [idToCall, setIdToCall] = useState('');
 
   console.log('test', me);

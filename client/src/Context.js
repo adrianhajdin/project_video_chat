@@ -6,9 +6,6 @@ const UserContext = createContext();
 
 const socket = io.connect('https://warm-wildwood-81069.herokuapp.com', {
   withCredentials: true,
-  extraHeaders: {
-	  'my-custom-header': 'abcd',
-  },
 });
 
 const ContextProvider = ({ children }) => {

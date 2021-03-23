@@ -1,32 +1,15 @@
 const express = require("express")
 const http = require("http")
 const app = express()
-const cors = require('cors');
-
 const server = http.createServer(app)
 const io = require("socket.io")(server, {
-
-		cors: {
-		  origin: "https://hungry-euler-bf091b.netlify.app",
-		  methods: ["GET", "POST"],
-		  credentials: true
-		}
-	  ,
-	handlePreflightRequest: (req, res) => {
-		const headers = {
-			"Access-Control-Allow-Headers": "Content-Type, Authorization",
-			"Access-Control-Allow-Origin": req.headers.origin, //or the specific origin you want to give access to,
-			"Access-Control-Allow-Credentials": true
-		};
-
-		res.writeHead(200, headers);
-		res.end();
-	}	
+	cors: {
+		origin: "https://hungry-euler-bf091b.netlify.app",
+		methods: ["GET", "POST"],
+		allowedHeaders: ["my-custom-header"],
+		credentials: true
+	  }
 });
-
-app.use(cors())
-app.options('*', cors());
-
 
 io.on("connection", (socket) => {
 	socket.emit("me", socket.id)

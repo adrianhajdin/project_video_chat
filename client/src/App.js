@@ -5,7 +5,7 @@ import { Notifications, Sidebar, VideoPlayer } from './components';
 const App = () => (
   <>
     <CssBaseline />
-    <Typography variant="h2" align="center">Video Chat</Typography>
+    <Typography variant="h2" align="center" style={{ margin: '20px 0' }}>Video Chat</Typography>
     <VideoPlayer />
     <Sidebar />
     <Notifications />

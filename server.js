@@ -4,14 +4,14 @@ const cors = require("cors");
 
 const io = require("socket.io")(server, {
 	cors: {
-		origin: "https://priceless-swirles-68e598.netlify.app",
+		origin: "http://localhost:3000",
 		methods: [ "GET", "POST" ]
 	}
 });
 
 app.use(cors());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 io.on("connection", (socket) => {
 	socket.emit("me", socket.id)

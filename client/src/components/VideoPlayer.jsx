@@ -3,21 +3,24 @@ import { Grid, Typography } from '@material-ui/core';
 
 import { SocketContext } from '../Context';
 
+import useStyles from './VideoStyles';
+
 const VideoPlayer = () => {
   const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext);
-  console.log(call);
+  const classes = useStyles();
+
   return (
-    <Grid container>
+    <Grid container className={classes.gridContainer}>
       {stream && (
-        <Grid item xs={callAccepted && !callEnded ? 6 : 12} align="center">
-          <Typography variant="h6" gutterBottom>{name || 'Name'}</Typography>
-          <video playsInline muted ref={myVideo} autoPlay style={{ width: '500px' }} />
+        <Grid item xs={12} md={6} align="center">
+          <Typography variant="h5" gutterBottom>{name || 'Name'}</Typography>
+          <video playsInline muted ref={myVideo} autoPlay className={classes.video} />
         </Grid>
       )}
       {callAccepted && !callEnded && (
-        <Grid item xs={6} align="center">
+        <Grid item xs={12} md={6} align="center">
           <Typography variant="h6" gutterBottom>{call.name || 'Name'}</Typography>
-          <video playsInline ref={userVideo} autoPlay style={{ width: '500px' }} />
+          <video playsInline ref={userVideo} autoPlay className={classes.video} />
         </Grid>
       )}
     </Grid>

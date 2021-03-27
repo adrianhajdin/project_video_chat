@@ -15,7 +15,7 @@
 		"react-copy-to-clipboard": "^5.0.3",
 		"react-dom": "^17.0.1",
 		"react-scripts": "4.0.3",
-		"simple-peer": "^9.9.3",
+		"simple-peer": "^9.10.0",
 		"socket.io-client": "^4.0.0",
 		"web-vitals": "^1.0.1",
 		"yarn": "^1.22.10"

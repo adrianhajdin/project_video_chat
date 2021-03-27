@@ -38,7 +38,7 @@ const Sidebar = ({ children }) => {
 
   return (
     <Container className={classes.container}>
-      <Paper elevation={10} style={{ padding: '10px 20px' }}>
+      <Paper elevation={10} style={{ padding: '10px 20px', border: '2px solid black' }}>
         <form className={classes.root} noValidate autoComplete="off">
           <Grid container style={{ width: '100%' }} className={classes.gridContainer}>
             <Grid item xs={12} md={6} style={{ padding: 20 }}>

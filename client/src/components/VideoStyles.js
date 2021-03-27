@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core';
 
 export default makeStyles((theme) => ({
   video: {
-    width: '600px',
+    width: '550px',
     [theme.breakpoints.down('xs')]: {
       width: '300px',
     },

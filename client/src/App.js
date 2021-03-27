@@ -12,13 +12,14 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     width: '600px',
+    border: '2px solid black',
 
     [theme.breakpoints.down('xs')]: {
       width: '90%',
     },
   },
   heading: {
-    color: 'rgba(0,183,255, 1)',
+    // color: 'rgba(0,183,255, 1)',
   },
   image: {
     marginLeft: '15px',

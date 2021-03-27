@@ -76,6 +76,8 @@ const ContextProvider = ({ children }) => {
     setCallEnded(true);
 
     connectionRef.current.destroy();
+
+    window.location.reload();
   };
 
   return (

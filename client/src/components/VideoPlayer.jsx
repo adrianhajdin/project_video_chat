@@ -6,23 +6,23 @@ import { SocketContext } from '../Context';
 import useStyles from './VideoStyles';
 
 const VideoPlayer = () => {
-  const { callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext);
+  const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } = useContext(SocketContext);
   const classes = useStyles();
 
   return (
     <Grid container className={classes.gridContainer}>
       {stream && (
-        <Paper style={{ padding: '10px', border: '2px solid black' }}>
-          <Grid item xs={12} md={6} align="center">
-            {/* <Typography variant="h5" gutterBottom align="left">{name || 'Name'}</Typography> */}
+        <Paper style={{ padding: '10px', border: '2px solid black', margin: '10px' }}>
+          <Grid item xs={12} md={6}>
+            <Typography variant="h5" gutterBottom>{name || 'Name'}</Typography>
             <video playsInline muted ref={myVideo} autoPlay className={classes.video} />
           </Grid>
         </Paper>
       )}
       {callAccepted && !callEnded && (
-        <Paper style={{ padding: '10px', border: '2px solid black' }}>
-          <Grid item xs={12} md={6} align="center">
-            <Typography variant="h6" gutterBottom>{call.name || 'Name'}</Typography>
+        <Paper style={{ padding: '10px', border: '2px solid black', margin: '10px' }}>
+          <Grid item xs={12} md={6}>
+            <Typography variant="h5" gutterBottom>{call.name || 'Name'}</Typography>
             <video playsInline ref={userVideo} autoPlay className={classes.video} />
           </Grid>
         </Paper>

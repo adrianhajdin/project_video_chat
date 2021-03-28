@@ -5,8 +5,8 @@ body {
     background:
     /* top, transparent black, faked with gradient */ 
     linear-gradient(
-      rgba(0, 0, 0, 0.1), 
-      rgba(0, 0, 0, 0.1)
+      rgba(0, 0, 0, 0.3), 
+      rgba(0, 0, 0, 0.3)
     ),
     /* bottom, image */
     /* url(https://cdn.wallpapersafari.com/55/73/ghY4rc.jpg); */

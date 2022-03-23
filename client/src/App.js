@@ -5,11 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import VideoPlayer from './components/VideoPlayer';
 import Sidebar from './components/Sidebar';
 import Notifications from './components/Notifications';
-<<<<<<< HEAD
-import Register from './components/Register/Register';
-=======
 import Login from './components/Login';
->>>>>>> 16121cf42ab0f81373f21217168972f68d8339d2
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -47,7 +43,6 @@ const App = () => {
         <Typography variant="h2" align="center">Video Chat</Typography>
       </AppBar>
       <VideoPlayer />
-      <Register />
       <Sidebar>
         <Notifications />
       </Sidebar>

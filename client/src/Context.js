@@ -20,6 +20,7 @@ const ContextProvider = ({ children }) => {
   const connectionRef = useRef();
 
   useEffect(() => {
+    socket = io('https://warm-wildwood-81069.herokuapp.com');
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then((currentStream) => {
         setStream(currentStream);
@@ -32,10 +33,11 @@ const ContextProvider = ({ children }) => {
     socket.on('callUser', ({ from, name: callerName, signal }) => {
       setCall({ isReceivingCall: true, from, name: callerName, signal });
     });
-  }, []);
+  }, [callEnded]);
 
   const answerCall = () => {
     setCallAccepted(true);
+    setCallEnded(false);
 
     const peer = new Peer({ initiator: false, trickle: false, stream });
 
@@ -73,11 +75,14 @@ const ContextProvider = ({ children }) => {
   };
 
   const leaveCall = () => {
-    setCallEnded(true);
-
     connectionRef.current.destroy();
-
-    window.location.reload();
+    socket.disconnect();
+    // window.location.reload();
+    setStream(null);
+    setMe('');
+    setCall('');
+    setCallAccepted(false);
+    setCallEnded(true);
   };
 
   return (

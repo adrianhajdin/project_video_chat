@@ -33,7 +33,7 @@ const VideoPlayer = () => {
   const uploada = (scrFile) => {
     axios({
       method: 'post',
-      url: 'http://192.168.0.24:80/api/emotion',
+      url: 'http://localhost:80/api/emotion/',
       data: {
         scr: scrFile,
       },
